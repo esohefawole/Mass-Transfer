@@ -51,6 +51,34 @@ $\cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \
 ### Laws
 Dalton's Law: $P = \sum P_i$  
 
-Fick's Law:
+Fick's Law (binary mixture A and B):
 - mole flux of species A: $\underline{J_A} = -D_{AB} \underline{\nabla} c_A = -c D_{AB} \underline{\nabla} x_A$  
-- mass flux of species A: $\underline{j_A} = -D_{AB} \underline{\nabla} \rho_A = -\rho D_{AB} \underline{\nabla} m_A$
+- mass flux of species A: $\underline{j_A} = -D_{AB} \underline{\nabla} \rho_A = -\rho D_{AB} \underline{\nabla} m_A$  
+
+$\cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot$  
+
+### Mass transfer relative to fixed coordinates (moles)  
+
+Absolute molar flux: $\underline{N_A''} = c_A \underline{v_A}$ or $\underline{N_B''} = c_B \underline{v_B}$  
+
+Total molar flux: $\underline{N''} = c \underline{v}^* = \underline{N_A''} + \underline{N_B''}$   
+where the molar-averaged velocity $\underline{v}^* = x_A \underline{v_A} + x_B \underline{v_B}$  
+
+Molar flux relative to molar-averaged flux of species A:  
+$\underline{J_A}^* = c_A (\underline{v_A}- \underline{v}^*)$  
+
+$\cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot$  
+
+### Mass transfer relative to fixed coordinates (mass)  
+
+Absolute mass flux: $\underline{n_A''} = \rho_A \underline{v_A}$ or $\underline{n_B''} = \rho_B \underline{v_B}$  
+
+Total mass flux: $\underline{n''} = \rho \underline{v} = \underline{n_A''} + \underline{n_B''}$   
+where the mass-averaged velocity $\underline{v} = m_A \underline{v_A} + m_B \underline{v_B}$  
+
+Molar flux relative to molar-averaged flux of species A:  
+$\underline{j_A} = \rho_A (\underline{v_A}- \underline{v})$  
+
+$\cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot$  
+
+### Species Conservation Equations
