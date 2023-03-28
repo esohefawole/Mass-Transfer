@@ -27,7 +27,7 @@ molar flux ($\underline{J}$ or $\underline{N}$) [=] $\frac{mol}{m^2 \cdot s}$
 mass flux ($\underline{j}$ or $\underline{n}$) [=] $\frac{kg}{m^2 \cdot s}$  
 diffusion coefficient (D) [=] $\frac{m^2}{s}$  
 mass fraction for species i ($m_i$) [=] dimensionless  
-mole fraction for species i ($x_i$) [=] dimensionless
+mole fraction for species i ($x_i$) [=] dimensionless  
 hard sphere diameter ($\sigma$) [=] Angstroms  
 chemical potential for species i ($\mu_i$) [=] $\frac{J}{mol}$  
 Boltzmann constant ($k_b$) [=] $\frac{J}{K}$  
@@ -67,6 +67,10 @@ where the molar-averaged velocity $\underline{v}^* = x_A \underline{v_A} + x_B \
 Molar flux relative to molar-averaged flux of species A:  
 $\underline{J_A}^* = c_A (\underline{v_A}- \underline{v}^*)$  
 
+Plugging in $\underline{N_A''}$ and $\underline{v}^*$ into $\underline{J_A}^*$ equation gives:  
+
+$\underline{N_A''} = -D_{AB} \underline{\nabla} c_A + x_A(\underline{N_A''} + \underline{N_B''})$
+
 $\cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot$  
 
 ### Mass transfer relative to fixed coordinates (mass)  
@@ -79,6 +83,29 @@ where the mass-averaged velocity $\underline{v} = m_A \underline{v_A} + m_B \und
 Molar flux relative to molar-averaged flux of species A:  
 $\underline{j_A} = \rho_A (\underline{v_A}- \underline{v})$  
 
+Plugging in $\underline{n_A''}$ and $\underline{v}$ into $\underline{j_A}^*$ equation gives:  
+
+$\underline{n_A''} = -D_{AB} \underline{\nabla} \rho_A + m_A(\underline{n_A''} + \underline{n_B''})$
+
 $\cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot$  
 
-### Species Conservation Equations
+### Species Conservation Equations (for species i)
+
+Molar: $\frac{\partial c_i}{\partial t} + \underline{\nabla} \cdot \underline{N_i''} - \dot{N_i} = 0$  
+- $\frac{\partial c_i}{\partial t}$ is the accumulation in microscopic control volume
+- $\underline{\nabla} \cdot \underline{N_i''}$ is the divergence of flux in microscopic control volume
+- $\dot{N_i}$ is the molar rate of increase of species i in microscopic control volume due to reactions  
+
+Mass: $\frac{\partial \rho_i}{\partial t} + \underline{\nabla} \cdot \underline{n_i''} - \dot{n_i} = 0$ (same term definitions as above but for mass)  
+
+$\cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot$  
+
+### Predicting $D_{AB}$ for Gases  
+
+1. Completely emperical
+    - $D_{AB} = \alpha + \beta T + \gamma T^2$
+        - $\alpha, \beta, \gamma$ are regression coefficients specified at a particular pressure
+2. Theoretical (Chapman and Enskog)
+    - $D_{AB} = \frac{1.86 \times 10^{-3} T^{3/2} (\frac{1}{M_A} + \frac{1}{M_B})^{1/2}}{P \sigma_{AB}^2 \Omega}$
+        - $\sigma_{AB} = \frac{1}{2} (\sigma_A + \sigma_B)$ where $\sigma_i$ is "hard sphere diameter
+
