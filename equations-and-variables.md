@@ -108,4 +108,15 @@ $\cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \
 2. Theoretical (Chapman and Enskog)
     - $D_{AB} = \frac{1.86 \times 10^{-3} T^{3/2} (\frac{1}{M_A} + \frac{1}{M_B})^{1/2}}{P \sigma_{AB}^2 \Omega}$
         - $\sigma_{AB} = \frac{1}{2} (\sigma_A + \sigma_B)$ where $\sigma_i$ is "hard sphere diameter
+        - $M_A,M_B$ are molecular weights of species A and B
+        - $P$ is pressure in atm
+        - $\Omega$ is the collision integral based on attractive interactions between  
+        A and B (found from table using calculated $\frac{k_B T}{\epsilon_{AB}}$ where $\epsilon_i$ represents  
+        attractive interactions between A and B)
+3. Semi-Empirical (Fuller, Schettler, and Giddings relation)
+    - $D_{AB} = 10^{-3} \frac{T^{1.75} (\frac{1}{M_A} + \frac{1}{M_B})^{1/2}}{P[(\sum V_{i,A})^{1/3} + (\sum V_{i,B})^{1/3}]^2}$
+        - $V_{i,j}$ is the "diffusion volume" of a part of the molecule  
 
+$\cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot$ 
+
+# 
