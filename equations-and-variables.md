@@ -49,7 +49,10 @@ For species i,
 
 $\cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot$  
 ### Laws
-Dalton's Law: $P = \sum P_i$  
+Dalton's Law (gas): $P = \sum P_i$  where $P_i = y_iP$  
+
+Raoult's Law (liquid) : $P = \sum P_i$  where $P_i = x_iP^*$ and $P^*$ is the  
+equilibrium vapor pressure
 
 Fick's Law (binary mixture A and B):
 - mole flux of species A: $\underline{J_A} = -D_{AB} \underline{\nabla} c_A = -c D_{AB} \underline{\nabla} x_A$  
@@ -98,7 +101,33 @@ Molar: $\frac{\partial c_i}{\partial t} + \underline{\nabla} \cdot \underline{N_
 
 Mass: $\frac{\partial \rho_i}{\partial t} + \underline{\nabla} \cdot \underline{n_i''} - \dot{n_i} = 0$ (same term definitions as above but for mass)  
 
+Cartesian Coordinates $(x,y,z,t)$:  
+
+$\frac{\partial c_i}{\partial t} + (v_x \frac{\partial c_i}{\partial x}) + (v_y \frac{\partial c_i}{\partial y}) +  (v_z \frac{\partial c_i}{\partial z}) = D_i [\frac{\partial^2 c_i}{\partial x^2} + \frac{\partial^2 c_i}{\partial y^2} + \frac{\partial^2 c_i}{\partial z^2}] + \dot{N_i}$  
+
+Cylindrical Coordinates $(r, \theta, z,t)$:  
+
+$\frac{\partial c_i}{\partial t} + (v_r \frac{\partial c_i}{\partial r}) + (\frac{v_\theta}{r} \frac{\partial c_i}{\partial \theta}) +  (v_z \frac{\partial c_i}{\partial z}) = D_i [\frac{1}{r} \frac{\partial}{\partial r} (r \frac{\partial c_i}{\partial r}) + \frac{1}{r^2}\frac{\partial^2 c_i}{\partial \theta^2} + \frac{\partial^2 c_i}{\partial z^2}] + \dot{N_i}$  
+
+Spherical Coordinates $(r, \theta, \phi, t)$:
+
+$\frac{\partial c_i}{\partial t} + (v_r \frac{\partial c_i}{\partial r}) + (\frac{v_\theta}{r} \frac{\partial c_i}{\partial \theta}) +  (\frac{v_\phi}{r sin\theta} \frac{\partial c_i}{\partial \phi}) = D_i [\frac{1}{r^2} \frac{\partial}{\partial r} (r^2 \frac{\partial c_i}{\partial r}) + \frac{1}{r^2 sin\theta} \frac{\partial}{\partial \theta} ( sin\theta \frac{\partial c_i}{\partial \theta}) + \frac{1}{r^2 sin^2 \theta} \frac{\partial^2 c_i}{\partial \phi^2}] + \dot{N_i}$
+
 $\cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot$  
+
+### Typical Boundary Conditions
+
+1. Specified concentration at boundary surface
+    - Liquid-Gas interface
+        - $x_A|_{surface} = \frac{P_A|_{surface}}{H}$ where $H$ is Henry's Constant
+    - Solid-Gas interface
+        - $c_A|_{surface} = SP_A|_{surface}$ where $S$ is solubility
+2. Specified flux at boundary surface
+    - Fick's Law: $\underline{J_A^*}|_{surface} = -D_{AB}\underline{\nabla}c_A|_{surface}$
+3. Specified reacting surface boundary
+    - $\dot{N}_A|_{surface} = k_c c_{A}^n$ where $k_c$ is a surface reaction rate constant and $n$ is the reaction order
+
+$\cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot$ 
 
 ### Predicting $D_{AB}$ for Gases  
 
