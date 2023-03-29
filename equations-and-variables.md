@@ -119,7 +119,7 @@ $\cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \
 
 1. Specified concentration at boundary surface
     - Liquid-Gas interface
-        - $x_A|_{surface} = \frac{P_A|_{surface}}{H}$ where $H$ is Henry's Constant
+        - $x_{A}|_{surface} = \frac{P_A|_{surface}}{H}$ where $H$ is Henry's Constant
     - Solid-Gas interface
         - $c_A|_{surface} = SP_A|_{surface}$ where $S$ is solubility
 2. Specified flux at boundary surface
