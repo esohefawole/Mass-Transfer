@@ -70,7 +70,7 @@ where the molar-averaged velocity $\underline{v}^* = x_A \underline{v_A} + x_B \
 Molar flux relative to molar-averaged flux of species A:  
 $\underline{J_A}^* = c_A (\underline{v_A}- \underline{v}^*)$  
 
-Plugging in $\underline{N_A''}$ and $\underline{v}^*$ into $\underline{J_A}^*$ equation gives:  
+Plugging in $\underline{N_A''}$ and $\underline{v}^* $ into $\underline{J_A}^* $ equation gives:  
 
 $\underline{N_A''} = -D_{AB} \underline{\nabla} c_A + x_A(\underline{N_A''} + \underline{N_B''})$
 
@@ -119,13 +119,13 @@ $\cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \
 
 1. Specified concentration at boundary surface
     - Liquid-Gas interface
-        - $x_{A}|_{surface} = \frac{P_A|_{surface}}{H}$ where $H$ is Henry's Constant
+        - $x_{A_{surface}} = \frac{P_{A_{surface}}}{H}$ where $H$ is Henry's Constant
     - Solid-Gas interface
-        - $c_A|_{surface} = SP_A|_{surface}$ where $S$ is solubility
+        - $c_{A_{surface}} = S P_{A_{surface}}$ where $S$ is solubility
 2. Specified flux at boundary surface
-    - Fick's Law: $\underline{J_A^*}|_{surface} = -D_{AB}\underline{\nabla}c_A|_{surface}$
+    - Fick's Law: $\underline{J_{A_{surface}}}^* = -D_{AB}\underline{\nabla}c_{A_{surface}}$
 3. Specified reacting surface boundary
-    - $\dot{N}_A|_{surface} = k_c c_{A}^n$ where $k_c$ is a surface reaction rate constant and $n$ is the reaction order
+    - $\dot{N}_ {A_{surface}} = k_c c_{A}^n$ where $k_c$ is a surface reaction rate constant and $n$ is the reaction order
 
 $\cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot \cdot$ 
 
